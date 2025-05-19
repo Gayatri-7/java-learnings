@@ -1,0 +1,33 @@
+package pack;
+//finding if the integer is perfect sqaure using mathematical beauty
+	
+class Main{
+	public static void main(String[] args) {
+    int num=36;
+    int sum=0;
+    
+    for(int i=1;sum<=36;i= i+2) {
+    	sum=sum+i;
+    	if(sum==num) {
+    		System.out.println("The number is a perfect square");
+    		return;
+    	}
+    }
+    System.out.println("not a perfect square");
+    
+//    int i=1;
+//    while(sum<=num) {
+//    	sum=sum+i;
+//    	i=i+2;
+//    	if(sum==num) {
+//  		System.out.println("The number is a perfect square");
+//  		return;
+//  				
+//    	}
+//    }
+//   System.out.println("not a perfect square");
+//   
+}
+}
+//space:O(n)
+//time:O(√n) 
