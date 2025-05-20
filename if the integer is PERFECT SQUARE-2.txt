@@ -1,0 +1,53 @@
+//Q.to find if a number is a perfect square 3 methods(here are only 2,3rd is in diff file)
+package pack;
+
+
+public class Main{
+	public static void main(String[] args) {
+		//1.Brute force
+//		int num=37;
+//		for(int i=1;i*i<=num;i++) {
+//			if(i*i==num) {
+//				System.out.println("it is a perfect square");
+//				return;
+//				
+//			}
+//		}
+//		System.out.println("not a perfect square");
+		
+		
+		
+	    //2.Binary Search
+		int num=81;
+		//sanity cases
+		if(num<0) {
+			System.out.println("not a perfect square");
+		}
+		if(num==0|| num==1) {
+			System.out.println("perfect square");
+		}
+		//search
+		int left=1;
+		int right=num;
+		while(left<=right) {
+			int mid=(left+right)/2;
+			int sq=mid*mid;
+			if(sq==num) {
+				System.out.println("perfect square");
+				return;
+			}
+			else {
+				if(sq<num) { 
+				left=mid+1;
+				}
+				else{
+					right=mid-1;
+				}
+				
+			}
+		}
+		System.out.println("not a perfect square");
+		
+		
+	}
+}
