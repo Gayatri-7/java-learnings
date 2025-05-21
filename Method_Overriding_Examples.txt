@@ -1,0 +1,108 @@
+package pack;
+
+////🔷 Runtime Polymorphism (Method Overriding)
+
+//Example-1
+
+//class Animal{
+//	void sound() {
+//		System.out.println("Animal makes sound");
+//	}	
+//}
+//class Dog extends Animal{
+//	@Override
+//	void sound() {
+//		System.out.println("doggie barks");
+//	}
+//}
+//
+//public class Main{
+//	public static void main(String[] args) {
+//		Animal a =new Dog();
+//		a.sound();
+//	}
+//}
+//✔ The method call is decided at runtime based on the actual object type.
+//✔ The method call myAnimal.sound(); is not decided at compile-time.
+//✔ At runtime, Java sees that myAnimal is actually a Dog, so it calls 
+//the overridden method in Dog.
+
+
+//Example-2
+//class Payment{
+//	void process(){
+//		System.out.println("Payment is processing...");
+//	}
+//}
+//class Paypal extends Payment{
+//	@Override
+//	void process() {
+//		System.out.println("Paypal is processing payment...");
+//	}
+//	
+//}
+//class BharatPay extends Payment{
+//	@Override
+//	void process() {
+//		System.out.println("BharatPay is processing payment...");
+//	}
+//}
+//class Main{
+//	public static void main(String[] args) {
+//		Payment p1=new Paypal();
+//		Payment p2=new BharatPay();
+//		p1.process();
+//		p2.process();
+//	}
+//}
+
+
+//Example-3 // with constructors of parent class 
+class Animal{
+	public Animal() {
+		System.out.println("Animal is created");
+     }
+	void sound() {
+		System.out.println("Animal makes sound");
+	}
+}
+class Dog extends Animal{
+	Dog(){
+		super();
+		System.out.println("dog is created");
+	}
+	void sound() {
+		System.out.println("Dog barkssss");
+	}
+}
+
+
+class cat extends Animal{
+	cat(){
+		super();
+		System.out.println("cat is created");
+	}
+	void sound() {
+		System.out.println("cat purssss");
+	}
+	
+}
+
+
+
+class Main{
+	public static void main(String[] args) {
+		Animal mydog = new Dog();
+		Animal mycat=new cat();
+		
+		mydog.sound();
+		mycat.sound();
+		
+	}
+}
+
+
+
+//The super() keyword is used to call the parent class constructor 
+//from the child class constructor. This ensures that the parent's constructor 
+//logic is executed first before the child's constructor logic.
